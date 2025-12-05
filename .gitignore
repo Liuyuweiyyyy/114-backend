@@ -1,0 +1,14 @@
+# 虛擬環境
+.venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode 設定（可選）
+.vscode/
+
+# 其他暫存檔（可選）
+*.log
