@@ -88,6 +88,7 @@ def refresh_token(refresh: Optional[str] = Cookie(None)):
         payload = jwt.decode(refresh, SECRET_KEY, algorithms=[ALGORITHM])
         if payload.get("type") != "refresh":
             raise HTTPException(status_code=401, detail="Invalid refresh token")
+        username = payload.get("sub")
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid or expired refresh token")
 
